@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    AddUserComponent
+    AddUserComponent,
+    AllUsersComponent
   ],
   imports: [
     BrowserModule,

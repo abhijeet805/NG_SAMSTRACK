@@ -26,4 +26,12 @@ export class UserService {
       role,
     });
   }
+
+  // get all user
+
+  getAllUser(): Observable<any> {
+    const url = 'http://localhost:8091/user/get-all-user';
+
+    return this.http.get(url);
+  }
 }
