@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { DeleteUserComponent } from './components/delete-user/delete-user.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
     path: 'edit-user/:username',
     component: EditUserComponent,
   },
+  {
+    path:'delete-user/:username',
+    component:DeleteUserComponent
+  }
+
 ];
 
 @NgModule({

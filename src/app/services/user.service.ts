@@ -41,4 +41,14 @@ export class UserService {
 
     return this.http.get(url);
   }
+
+  updateUser(user: any): Observable<any> {
+    const url = 'http://localhost:8091/user/update-user';
+    return this.http.put(url, user);
+  }
+
+  deleteUser(username: any): Observable<any> {
+    const url = `http://localhost:8091/user/delete-user-by-username?username=${username}`;
+   return this.http.delete(url);
+  }
 }

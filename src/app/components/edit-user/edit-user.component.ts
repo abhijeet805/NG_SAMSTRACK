@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 export class EditUserComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private router:Router
   ) {}
 
   selectedUser: any;
@@ -42,6 +43,19 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUser() {
-    alert(this.firstName);
+    const user = {
+      username: this.username,
+      password: this.password,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      role: this.role,
+    };
+
+    this.userService.updateUser(user).subscribe((response) => {
+      alert('Updated Successfully : ' + this.username);
+this.router.navigate(['/get-all-users'])
+
+    });
   }
 }
