@@ -22,7 +22,7 @@
       <td>{{u.role}}</td>
       <td>
         <a class="btn btn-success" [routerLink]="['/edit-user',u.username]"> Edit</a> &nbsp;
-        <a class="btn btn-danger" [routerLink]="['/delete-user',u.username]">Delete</a>
+        <a class="btn btn-danger" (click)="deleteUser(u.username)">Delete</a>
       </td>
     </tr>
 

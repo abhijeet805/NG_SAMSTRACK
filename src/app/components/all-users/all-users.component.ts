@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./all-users.component.css'],
 })
 export class AllUsersComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllUser();
@@ -18,6 +19,14 @@ export class AllUsersComponent implements OnInit {
   getAllUser() {
     this.userService.getAllUser().subscribe((response) => {
       this.users = response;
+    });
+  }
+  deleteUser(username: any) {
+    this.userService.deleteUser(username).subscribe((response) => {
+      alert('User deleted');
+      this.router.navigate(['/get-all-users']).then(() => {
+        window.location.reload();
+      });
     });
   }
 }

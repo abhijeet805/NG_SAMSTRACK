@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -48,7 +48,8 @@ export class UserService {
   }
 
   deleteUser(username: any): Observable<any> {
-    const url = `http://localhost:8091/user/delete-user-by-username?username=${username}`;
-   return this.http.delete(url);
+    const url = 'http://localhost:8091/user/delete-user-by-username';
+    const params = new HttpParams().set('username', username);
+    return this.http.delete(url, { params });
   }
 }

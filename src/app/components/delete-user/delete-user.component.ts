@@ -7,13 +7,12 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './delete-user.component.html',
   styleUrls: ['./delete-user.component.css'],
 })
-export class DeleteUserComponent implements OnInit {
+export class DeleteUserComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private router:Router
-  ) {}
-  ngOnInit(): void {
+    private router: Router
+  ) {
     const selectedUsername =
       this.activatedRoute.snapshot.paramMap.get('username');
 
