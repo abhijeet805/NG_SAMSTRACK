@@ -4,25 +4,34 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
-    path:'',component:LoginComponent
+    path: '',
+    component: LoginComponent,
   },
   {
-    path:"home",component:HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path:'add-user',component:AddUserComponent
+    path: 'add-user',
+    component: AddUserComponent,
   },
   {
-    path:'get-all-users',component:AllUsersComponent
-  }
+    path: 'get-all-users',
+    component: AllUsersComponent,
+  },
 
+  {
+    path: 'edit-user/:username',
+    component: EditUserComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

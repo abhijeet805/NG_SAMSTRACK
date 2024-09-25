@@ -34,4 +34,11 @@ export class UserService {
 
     return this.http.get(url);
   }
+
+  getUserByUsername(username: any): Observable<any> {
+    //
+    const url = `http://localhost:8091/user/get-user-by-username/${username}`;
+
+    return this.http.get(url);
+  }
 }

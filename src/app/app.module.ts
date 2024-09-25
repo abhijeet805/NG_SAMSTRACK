@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
     HomeComponent,
     MenuComponent,
     AddUserComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

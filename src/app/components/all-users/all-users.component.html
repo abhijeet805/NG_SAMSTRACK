@@ -9,6 +9,7 @@
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
       <th scope="col">Role</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody *ngFor=" let u of users">
@@ -19,6 +20,10 @@
       <td>{{u.lastName}}</td>
       <td>{{u.email}}</td>
       <td>{{u.role}}</td>
+      <td>
+        <a class="btn btn-success" [routerLink]="['/edit-user',u.username]"> Edit</a> &nbsp;
+        <a class="btn btn-danger" [routerLink]="['/delete-user',u.username]">Delete</a>
+      </td>
     </tr>
 
   </tbody>
