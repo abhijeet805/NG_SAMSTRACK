@@ -50,6 +50,6 @@ export class UserService {
   deleteUser(username: any): Observable<any> {
     const url = 'http://localhost:8091/user/delete-user-by-username';
     const params = new HttpParams().set('username', username);
-    return this.http.delete(url, { params });
+    return this.http.delete(url, { params,responseType: 'text' });
   }
 }
